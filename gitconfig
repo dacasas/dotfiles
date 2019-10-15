@@ -29,7 +29,6 @@
   prune-branches = "!sh -c 'git co master | git branch --merged | grep -v master | xargs -n 1 git branch -d'"
 
 [core]
-  excludesfile = ~/.gitignore
   autocrlf = input
 
 [push]
@@ -55,3 +54,11 @@
 
 [github]
 	user = dacasas
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/dacasas/.stCommitMsg

@@ -23,6 +23,11 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
+if zplug check zsh-users/zsh-history-substring-search; then
+  bindkey "^[[A" history-beginning-search-backward
+  bindkey "^[[B" history-beginning-search-forward
+fi
+
 # Init rbenv and nodenv
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
@@ -52,3 +57,6 @@ setopt hist_reduce_blanks
 setopt share_history
 
 setopt hist_ignore_space
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"

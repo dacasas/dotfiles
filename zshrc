@@ -28,6 +28,8 @@ if zplug check zsh-users/zsh-history-substring-search; then
   bindkey "^[[B" history-beginning-search-forward
 fi
 
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # Init rbenv and nodenv
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
